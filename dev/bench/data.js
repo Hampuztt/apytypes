@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718098765511,
+  "lastUpdate": 1718098787147,
   "repoUrl": "https://github.com/Hampuztt/apytypes",
   "entries": {
     "APyTypes Fixed-Point Array Benchmarks": [
@@ -3194,6 +3194,135 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.000015218809583661785",
             "extra": "mean: 358.6168831535233 usec\nrounds: 2790"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "66853113+pre-commit-ci[bot]@users.noreply.github.com",
+            "name": "pre-commit-ci[bot]",
+            "username": "pre-commit-ci[bot]"
+          },
+          "committer": {
+            "email": "Hampuz.Togeretz@outlook.com",
+            "name": "Hampuz Togeretz",
+            "username": "Hampuztt"
+          },
+          "distinct": true,
+          "id": "70876b11c448a01bc3ef46340cbb325c971af061",
+          "message": "Fixed issues after PR feedback",
+          "timestamp": "2024-06-11T11:32:54+02:00",
+          "tree_id": "03fce3daccf65032a048b92a1e2304f581ee998a",
+          "url": "https://github.com/Hampuztt/apytypes/commit/70876b11c448a01bc3ef46340cbb325c971af061"
+        },
+        "date": 1718098786881,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "benchmark/ci_float_array_benchmarks.py::test_float_matrix_multiplication_20",
+            "value": 5608.456989226868,
+            "unit": "iter/sec",
+            "range": "stddev: 0.000003638010110457173",
+            "extra": "mean: 178.30216081194396 usec\nrounds: 5124"
+          },
+          {
+            "name": "benchmark/ci_float_array_benchmarks.py::test_float_matrix_addition_20",
+            "value": 187164.15933600612,
+            "unit": "iter/sec",
+            "range": "stddev: 4.5446605646031667e-7",
+            "extra": "mean: 5.342903275646657 usec\nrounds: 92593"
+          },
+          {
+            "name": "benchmark/ci_float_array_benchmarks.py::test_float_matrix_addition_200",
+            "value": 1032.302382309646,
+            "unit": "iter/sec",
+            "range": "stddev: 0.00002006704330089024",
+            "extra": "mean: 968.7084105750356 usec\nrounds: 889"
+          },
+          {
+            "name": "benchmark/ci_float_array_benchmarks.py::test_float_matrix_elementwise_multiplication_20",
+            "value": 323323.8951658587,
+            "unit": "iter/sec",
+            "range": "stddev: 2.689935479224553e-7",
+            "extra": "mean: 3.09287378678591 usec\nrounds: 159694"
+          },
+          {
+            "name": "benchmark/ci_float_array_benchmarks.py::test_float_matrix_elementwise_multiplication_200",
+            "value": 2058.297555184724,
+            "unit": "iter/sec",
+            "range": "stddev: 0.000006500489213748936",
+            "extra": "mean: 485.83840440419414 usec\nrounds: 1998"
+          },
+          {
+            "name": "benchmark/ci_float_array_benchmarks.py::test_float_scalar_matrix_addition_20",
+            "value": 237397.184238907,
+            "unit": "iter/sec",
+            "range": "stddev: 3.9927910174811965e-7",
+            "extra": "mean: 4.212349877720707 usec\nrounds: 137288"
+          },
+          {
+            "name": "benchmark/ci_float_array_benchmarks.py::test_float_scalar_matrix_addition_200",
+            "value": 1571.96743774636,
+            "unit": "iter/sec",
+            "range": "stddev: 0.00000671337810656294",
+            "extra": "mean: 636.1454925768965 usec\nrounds: 1482"
+          },
+          {
+            "name": "benchmark/ci_float_array_benchmarks.py::test_float_scalar_matrix_multiplication_20",
+            "value": 243799.67341526278,
+            "unit": "iter/sec",
+            "range": "stddev: 4.026721731607642e-7",
+            "extra": "mean: 4.101728218055095 usec\nrounds: 135410"
+          },
+          {
+            "name": "benchmark/ci_float_array_benchmarks.py::test_float_scalar_matrix_multiplication_200",
+            "value": 2348.092345001457,
+            "unit": "iter/sec",
+            "range": "stddev: 0.00001241812652417747",
+            "extra": "mean: 425.87762876054154 usec\nrounds: 2260"
+          },
+          {
+            "name": "benchmark/ci_float_array_benchmarks.py::test_float_matrix_creation_20",
+            "value": 242770.45240646767,
+            "unit": "iter/sec",
+            "range": "stddev: 3.859750335449629e-7",
+            "extra": "mean: 4.119117421776321 usec\nrounds: 175717"
+          },
+          {
+            "name": "benchmark/ci_float_array_benchmarks.py::test_float_matrix_creation_200",
+            "value": 3250.3105041263766,
+            "unit": "iter/sec",
+            "range": "stddev: 0.000011920660358394324",
+            "extra": "mean: 307.6629136602386 usec\nrounds: 3243"
+          },
+          {
+            "name": "benchmark/ci_float_array_benchmarks.py::test_float_matrix_to_numpy_20",
+            "value": 387317.632661261,
+            "unit": "iter/sec",
+            "range": "stddev: 2.5530806525367477e-7",
+            "extra": "mean: 2.581860250278295 usec\nrounds: 192308"
+          },
+          {
+            "name": "benchmark/ci_float_array_benchmarks.py::test_float_matrix_to_numpy_200",
+            "value": 10390.095744640445,
+            "unit": "iter/sec",
+            "range": "stddev: 0.000006063473144962979",
+            "extra": "mean: 96.24550385070638 usec\nrounds: 10259"
+          },
+          {
+            "name": "benchmark/ci_float_array_benchmarks.py::test_float_matrix_cast_20",
+            "value": 246136.35382550117,
+            "unit": "iter/sec",
+            "range": "stddev: 2.9384617580509475e-7",
+            "extra": "mean: 4.06278871226374 usec\nrounds: 119962"
+          },
+          {
+            "name": "benchmark/ci_float_array_benchmarks.py::test_float_matrix_cast_200",
+            "value": 2767.419263247976,
+            "unit": "iter/sec",
+            "range": "stddev: 0.000017563691726625335",
+            "extra": "mean: 361.3474883550359 usec\nrounds: 2748"
           }
         ]
       }
