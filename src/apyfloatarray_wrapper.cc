@@ -308,7 +308,8 @@ void bind_float_array(nb::module_& m)
             -------
             :class:`int`
             )pbdoc")
-        .def_prop_ro("T", &APyFloatArray::transpose, R"pbdoc(
+        .def_prop_ro(
+            "T", [](const APyFloatArray& self) { return self.transpose(); }, R"pbdoc(
             The transposition of the array.
 
             Equivalent to calling :func:`APyFloatArray.transpose`.
@@ -316,7 +317,8 @@ void bind_float_array(nb::module_& m)
             Returns
             -------
             :class:`APyFloatArray`
-            )pbdoc")
+            )pbdoc"
+        )
         .def("to_numpy", &APyFloatArray::to_numpy, R"pbdoc(
             Return array as a :class:`numpy.ndarray` of :class:`numpy.float64`.
 
@@ -530,7 +532,11 @@ void bind_float_array(nb::module_& m)
             :class:`bool`
             )pbdoc")
 
-        .def("transpose", &APyFloatArray::transpose, R"pbdoc(
+        .def(
+            "transpose",
+            &APyFloatArray::transpose,
+            nb::arg("axes").none(),
+            R"pbdoc(
             Return the transposition of the array.
 
             If the dimension of `self` is one, this method returns the a copy of `self`.
@@ -543,7 +549,8 @@ void bind_float_array(nb::module_& m)
             Returns
             -------
             :class:`APyFloatArray`
-            )pbdoc")
+            )pbdoc"
+        )
         .def(
             "broadcast_to",
             &APyFloatArray::broadcast_to_python,

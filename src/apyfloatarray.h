@@ -69,6 +69,9 @@ public:
     //! Retrieve a single item
     std::variant<APyFloatArray, APyFloat> get_item(std::size_t idx) const;
 
+    //! Retrieve item on an axis
+    std::variant<APyFloatArray, APyFloat>
+    get_item_from_axis(std::size_t idx, std::size_t axis) const;
     //! Length of the array
     size_t get_size() const;
 
@@ -158,7 +161,7 @@ public:
 
     //! Transposition function. For a 1-D array, returns an exact copy of `*this`. For
     //! a 2-D array, returns the matrix transposition of `*this`.
-    APyFloatArray transpose() const;
+    APyFloatArray transpose(std::optional<nb::tuple> axes = std::nullopt) const;
 
     //! Returns a copy of the tensor with the elements resized.
     APyFloatArray cast(

@@ -539,3 +539,57 @@ def test_ravel(shape):
     reshaped = arr.reshape(shape)
     if not APyFloatArray.is_identical(reshaped.ravel(), arr):
         pytest.fail(f"Flatten didn't return to original 1d list after reshape {shape}")
+
+
+# def test_moveaxis():
+#     # manually create 1d arr
+#
+#     signs = [0, 0, 1, 1]
+#     exps = [127, 128, 128, 129]
+#     mans = [0, 0, 4194304, 0]
+#     arr = APyFloatArray(signs=signs, exps=exps, mans=mans, exp_bits=8, man_bits=23)
+#     arr = arr.reshape((2, 2))
+#     print(arr.to_numpy())
+#     arr.moveaxis(0, -1)
+#     # reshaped = arr.reshape(shape)
+#     # if not APyFloatArray.is_identical(reshaped.ravel(), arr):
+#     #     pytest.fail(f"Flatten didn't return to original 1d list after reshape {shape}")
+
+
+def moveaxis(a, source, destination):
+    # order = [n for n in range(2) if n not in source]
+    #
+    # for dest, src in sorted(zip(destination, source)):
+    #     order.insert(dest, src)
+    #
+    # signs = [0, 0, 1, 1, 0, 0, 0, 0]
+    # exps = [127, 128, 128, 129, 129, 129, 130, 130]
+    # mans = [0, 0, 4194304, 0, 4194304, 8388608, 0, 4194304]
+    arr = APyFloatArray.from_float([i for i in range(24)], 5, 5).reshape((3, 2, 4))
+
+    # arr = APyFloatArray(signs=signs, exps=exps, mans=mans, exp_bits=8, man_bits=23)
+    # arr = arr.reshape((2,2,2))
+    print("Original array: \n", arr.to_numpy())
+    print("--------")
+    # print("Transposed array: ", arr.transpose().to_numpy())
+
+    # print("Transposed shape: \n", arr.transpose().shape)
+
+    print("--------")
+    print("--------")
+    print("--------")
+    print("--------")
+    import numpy as np
+
+    # Create a 3D array with shape (2, 3, 4)
+    array = np.arange(24).reshape(3, 2, 4)
+    print("Original array shape:", array.shape)
+    print("Original array:\n", array)
+
+    # Transpose the array
+    transposed_array = np.transpose(array)
+    print("Transposed array shape:", transposed_array.shape)
+    print("Transposed array:\n", transposed_array)
+
+
+moveaxis(None, (0,), (1,))

@@ -1964,7 +1964,7 @@ class APyFloatArray:
         :class:`bool`
         """
 
-    def transpose(self) -> APyFloatArray:
+    def transpose(self, axes: tuple | None) -> APyFloatArray:
         """
         Return the transposition of the array.
 
