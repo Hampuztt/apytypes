@@ -30,17 +30,47 @@
 
    .. automethod:: to_numpy
 
-   Tranposition
-   ------------
+   Convolution
+   -----------
+
+   .. automethod:: convolve
+
+   Transposition
+   -------------
 
    .. automethod:: transpose
 
    Array shape manipulation
-   -----------------------
+   ------------------------
+
+   .. automethod:: flatten
+
+   .. automethod:: ravel
+
+   .. automethod:: reshape
 
    .. automethod:: squeeze
 
-   .. automethod:: reshape
+   .. automethod:: swapaxes
+
+   Mathematical functions
+   ----------------------
+
+   .. automethod:: sum
+
+   .. automethod:: prod
+
+   .. automethod:: nansum
+
+   .. automethod:: nanprod
+
+   .. automethod:: cumsum
+
+   .. automethod:: cumprod
+
+   .. automethod:: nancumsum
+
+   .. automethod:: nancumprod
 
    Broadcasting
    ------------
@@ -79,7 +109,7 @@
 
    .. autoproperty:: shape
 
-   Tranposition
-   ^^^^^^^^^^^^
+   Transposition
+   ^^^^^^^^^^^^^
 
    .. autoproperty:: T

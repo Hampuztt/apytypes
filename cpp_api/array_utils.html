@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="apybuffer.h" href="apybuffer.html" /><link rel="prev" title="Array functions" href="../api/arrayfunctions.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Examples" href="../examples/index.html" /><link rel="prev" title="python_util.h" href="python_util.html" />
 
     <!-- Generated with Sphinx 7.4.6 and Furo 2024.07.18 -->
-        <title>APyTypes C++ API - APyTypes documentation</title>
+        <title>array_utils.h - APyTypes documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=613ab9ff" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -183,7 +183,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -215,7 +215,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../api/arrayfunctions.html">Array functions</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">APyTypes C++ API</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of APyTypes C++ API</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">APyTypes C++ API</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of APyTypes C++ API</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="apybuffer.html"><code class="docutils literal notranslate"><span class="pre">apybuffer.h</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="apyfixed.html"><code class="docutils literal notranslate"><span class="pre">APyFixed</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="apyfixedarray.html"><code class="docutils literal notranslate"><span class="pre">APyFixedArray</span></code></a></li>
@@ -230,7 +230,7 @@
 <li class="toctree-l2"><a class="reference internal" href="broadcast.html"><code class="docutils literal notranslate"><span class="pre">broadcast.h</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="ieee754.html"><code class="docutils literal notranslate"><span class="pre">ieee754.h</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_util.html"><code class="docutils literal notranslate"><span class="pre">python_util.h</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="array_utils.html"><code class="docutils literal notranslate"><span class="pre">array_utils.h</span></code></a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">array_utils.h</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../examples/index.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Examples</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -263,7 +263,7 @@
         </a>
         <div class="content-icon-container">
           <div class="view-this-page">
-  <a class="muted-link" href="../_sources/cpp_api/index.rst.txt" title="View this page">
+  <a class="muted-link" href="../_sources/cpp_api/array_utils.rst.txt" title="View this page">
     <svg><use href="#svg-eye"></use></svg>
     <span class="visually-hidden">View this page</span>
   </a>
@@ -277,33 +277,44 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="apytypes-c-api">
-<h1>APyTypes C++ API<a class="headerlink" href="#apytypes-c-api" title="Link to this heading">¶</a></h1>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="apybuffer.html"><code class="docutils literal notranslate"><span class="pre">apybuffer.h</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="apyfixed.html"><code class="docutils literal notranslate"><span class="pre">APyFixed</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="apyfixedarray.html"><code class="docutils literal notranslate"><span class="pre">APyFixedArray</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="apyfixed_util.html"><code class="docutils literal notranslate"><span class="pre">apyfixed_util.h</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="apyfloat.html"><code class="docutils literal notranslate"><span class="pre">APyFloat</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="apyfloatarray.html"><code class="docutils literal notranslate"><span class="pre">APyFloatArray</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="apyfloat_util.html"><code class="docutils literal notranslate"><span class="pre">apyfloat_util.h</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="apytypes_common.html"><code class="docutils literal notranslate"><span class="pre">apytypes_common.h</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="apytypes_scratch_vector.html"><code class="docutils literal notranslate"><span class="pre">apytypes_scratch_vector.h</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="apytypes_simd.html"><code class="docutils literal notranslate"><span class="pre">apytypes_simd.h</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="apytypes_util.html"><code class="docutils literal notranslate"><span class="pre">apytypes_util.h</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="broadcast.html"><code class="docutils literal notranslate"><span class="pre">broadcast.h</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="ieee754.html"><code class="docutils literal notranslate"><span class="pre">ieee754.h</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="python_util.html"><code class="docutils literal notranslate"><span class="pre">python_util.h</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="array_utils.html"><code class="docutils literal notranslate"><span class="pre">array_utils.h</span></code></a></li>
-</ul>
+          <section id="array-utils-h">
+<h1><code class="docutils literal notranslate"><span class="pre">array_utils.h</span></code><a class="headerlink" href="#array-utils-h" title="Link to this heading">¶</a></h1>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv416shape_from_tupleN2nb5tupleE6size_t">
+<span id="_CPPv316shape_from_tupleN2nb5tupleE6size_t"></span><span id="_CPPv216shape_from_tupleN2nb5tupleE6size_t"></span><span id="shape_from_tuple__nb::tuple.s"></span><span class="target" id="array__utils_8h_1a9004caf6216d005fdc0aea2edbe761ae"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">shape_from_tuple</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">nb</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">tuple</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">new_shape</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">elem_count</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416shape_from_tupleN2nb5tupleE6size_t" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv416shape_from_tupleN2nb5tupleE">
+<span id="_CPPv316shape_from_tupleN2nb5tupleE"></span><span id="_CPPv216shape_from_tupleN2nb5tupleE"></span><span id="shape_from_tuple__nb::tuple"></span><span class="target" id="array__utils_8h_1af5309abebcdb10e3b32c1d447691d521"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">shape_from_tuple</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">nb</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">tuple</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">new_shape</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416shape_from_tupleN2nb5tupleE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv419get_normalized_axesRKNSt7variantIN2nb5tupleEN2nb4int_EEEKNSt6size_tE">
+<span id="_CPPv319get_normalized_axesRKNSt7variantIN2nb5tupleEN2nb4int_EEEKNSt6size_tE"></span><span id="_CPPv219get_normalized_axesRKNSt7variantIN2nb5tupleEN2nb4int_EEEKNSt6size_tE"></span><span id="get_normalized_axes__std::variant:nb::tuple.nb::int_:CR.std::sC"></span><span class="target" id="array__utils_8h_1a02fce7ee135465c06b060fab0cc510c5"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_normalized_axes</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">variant</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">nb</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">tuple</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">nb</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">int_</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">axes</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">n_dim</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419get_normalized_axesRKNSt7variantIN2nb5tupleEN2nb4int_EEEKNSt6size_tE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Converts the provided axes into a vector of positive indices. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Throws<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">nb</span><span class="p">::</span><span class="n">value_error</span></span></span> – if an axis value is out of bounds, if there are duplicate axes in the tuple or the axis don’t match. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I00E28transpose_axes_and_copy_datav28RANDOM_ACCESS_CONST_ITERATOR22RANDOM_ACCESS_ITERATORRKNSt6vectorINSt6size_tEEERKNSt6vectorINSt6size_tEEENSt6size_tE">
+<span id="_CPPv3I00E28transpose_axes_and_copy_data28RANDOM_ACCESS_CONST_ITERATOR22RANDOM_ACCESS_ITERATORRKNSt6vectorINSt6size_tEEERKNSt6vectorINSt6size_tEEENSt6size_tE"></span><span id="_CPPv2I00E28transpose_axes_and_copy_data28RANDOM_ACCESS_CONST_ITERATOR22RANDOM_ACCESS_ITERATORRKNSt6vectorINSt6size_tEEERKNSt6vectorINSt6size_tEEENSt6size_tE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RANDOM_ACCESS_CONST_ITERATOR</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RANDOM_ACCESS_ITERATOR</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="array__utils_8h_1afc52855563ed1274b527b932f31293d3"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">transpose_axes_and_copy_data</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I00E28transpose_axes_and_copy_datav28RANDOM_ACCESS_CONST_ITERATOR22RANDOM_ACCESS_ITERATORRKNSt6vectorINSt6size_tEEERKNSt6vectorINSt6size_tEEENSt6size_tE" title="transpose_axes_and_copy_data::RANDOM_ACCESS_CONST_ITERATOR"><span class="n"><span class="pre">RANDOM_ACCESS_CONST_ITERATOR</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">src</span></span>, <a class="reference internal" href="#_CPPv4I00E28transpose_axes_and_copy_datav28RANDOM_ACCESS_CONST_ITERATOR22RANDOM_ACCESS_ITERATORRKNSt6vectorINSt6size_tEEERKNSt6vectorINSt6size_tEEENSt6size_tE" title="transpose_axes_and_copy_data::RANDOM_ACCESS_ITERATOR"><span class="n"><span class="pre">RANDOM_ACCESS_ITERATOR</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">dst</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">src_shape</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">new_axis</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">itemsize</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I00E28transpose_axes_and_copy_datav28RANDOM_ACCESS_CONST_ITERATOR22RANDOM_ACCESS_ITERATORRKNSt6vectorINSt6size_tEEERKNSt6vectorINSt6size_tEEENSt6size_tE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Permutes the dimensions of the input data and copies it to the destination. </p>
+<p>This function permutes the dimensions of the source data according to the provided permutation array and copies the permuted data to the destination. Assumunes that the sizes specified in src_shape and perm match the dimensionality of the data. </p>
+</dd></dl>
+
 </div>
 </section>
 
@@ -312,23 +323,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="apybuffer.html">
+          <a class="next-page" href="../examples/index.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title"><code class="docutils literal notranslate"><span class="pre">apybuffer.h</span></code></div>
+                <div class="title">Examples</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../api/arrayfunctions.html">
+          <a class="prev-page" href="python_util.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Array functions</div>
+                <div class="title"><code class="docutils literal notranslate"><span class="pre">python_util.h</span></code></div>
                 
               </div>
             </a>
@@ -350,8 +361,30 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">array_utils.h</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv416shape_from_tupleN2nb5tupleE6size_t"><code class="docutils literal notranslate"><span class="pre">shape_from_tuple()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv416shape_from_tupleN2nb5tupleE"><code class="docutils literal notranslate"><span class="pre">shape_from_tuple()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv419get_normalized_axesRKNSt7variantIN2nb5tupleEN2nb4int_EEEKNSt6size_tE"><code class="docutils literal notranslate"><span class="pre">get_normalized_axes()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4I00E28transpose_axes_and_copy_datav28RANDOM_ACCESS_CONST_ITERATOR22RANDOM_ACCESS_ITERATORRKNSt6vectorINSt6size_tEEERKNSt6vectorINSt6size_tEEENSt6size_tE"><code class="docutils literal notranslate"><span class="pre">transpose_axes_and_copy_data()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
