@@ -774,6 +774,54 @@ def full_like(
     return full(a.shape, fill_value)
 
 
+def arange(
+    start,
+    stop=None,
+    step=None,
+    int_bits=None,
+    frac_bits=None,
+    exp_bits=None,
+    mantissa_bits=None,
+):
+    """
+    Simple unoptimized version of arange. Essentially calls a: np.arange() and returns result apytypesarray.from_array(a)
+
+    Parameters
+    ----------
+    start : int, float
+        start number
+    stop : int, optional
+        stop number
+    step : int, float, optional
+        step size in range
+    int_bits : int, optional
+        Number of integer bits for APyFixed.
+    frac_bits : int, optional
+        Number of fractional bits for APyFixed.
+    exp_bits : int, optional
+        Number of exponent bits for APyFloat.
+    mantissa_bits : int, optional
+        Number of mantissa bits for APyFloat.
+
+    Returns
+    -------
+    result : :class:`APyFloatArray` or :class:`APyFixedArray`
+        Array filled with fill_value, having the same shape and type as `a`.
+    """
+    import numpy as np
+
+    a = np.arange(start=start, stop=stop, step=step, dtype=np.float64)
+    a_type = _get_return_type(int_bits, frac_bits, exp_bits, mantissa_bits)
+
+    from apytypes import APyFixedArray, APyFloatArray
+
+    if a_type is APyFixedArray:
+        return APyFixedArray.from_array(a, int_bits=int_bits, frac_bits=frac_bits)
+    elif a_type is APyFloatArray:
+        return APyFloatArray.from_array(a, exp_bits=exp_bits, man_bits=mantissa_bits)
+    raise ValueError("Undefined inputs")
+
+
 # =============================================================================
 # Helpers
 # =============================================================================
