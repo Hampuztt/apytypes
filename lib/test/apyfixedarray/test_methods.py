@@ -960,3 +960,82 @@ def test_swapaxes():
 
     if not a.swapaxes(0, 2).shape == (2, 3, 4):
         pytest.fail("swapaxes didn't correctly swap axis")
+
+
+@pytest.mark.parametrize(
+    "start, stop, int_bits, frac_bits, result",
+    [
+        (-1, 0, 32, 1, [-1.0, -0.5]),
+        (-1, 0, 64, 1, [-1.0, -0.5]),
+        (-1, 0, 96, 1, [-1.0, -0.5]),
+        (
+            -27,
+            -26,
+            128,
+            3,
+            [-27.0, -26.875, -26.75, -26.625, -26.5, -26.375, -26.25, -26.125],
+        ),
+        (
+            -39,
+            -37,
+            96,
+            3,
+            [
+                -39.0,
+                -38.875,
+                -38.75,
+                -38.625,
+                -38.5,
+                -38.375,
+                -38.25,
+                -38.125,
+                -38.0,
+                -37.875,
+                -37.75,
+                -37.625,
+                -37.5,
+                -37.375,
+                -37.25,
+                -37.125,
+            ],
+        ),
+        (89, 90, 64, 1, [89.0, 89.5]),
+        (74, 75, 128, 3, [74.0, 74.125, 74.25, 74.375, 74.5, 74.625, 74.75, 74.875]),
+        (1, 2, 128, 2, [1.0, 1.25, 1.5, 1.75]),
+        (1, 2, 64, 2, [1.0, 1.25, 1.5, 1.75]),
+        (65, 67, 96, 2, [65.0, 65.25, 65.5, 65.75, 66.0, 66.25, 66.5, 66.75]),
+        (
+            65,
+            67,
+            96,
+            3,
+            [
+                65.0,
+                65.125,
+                65.25,
+                65.375,
+                65.5,
+                65.625,
+                65.75,
+                65.875,
+                66.0,
+                66.125,
+                66.25,
+                66.375,
+                66.5,
+                66.625,
+                66.75,
+                66.875,
+            ],
+        ),
+        # These works but from_floats breaks at these big numbers
+        # (2**130, 2**130+1, 896, 1, [2**130, 2**130+0.5]),
+        # (2**130, 2**130+1, 896, 2, [2**130,2**130+0.25, 2**130+0.5, 2**130+0.75]),
+    ],
+)
+def test_fullrange_param(start, stop, int_bits, frac_bits, result):
+    a = APyFixedArray.fullrange(start, stop, int_bits=int_bits, frac_bits=frac_bits)
+    b = APyFixedArray.from_float(result, int_bits=int_bits, frac_bits=frac_bits)
+    assert a.is_identical(
+        b
+    ), f"(int_bits, frac_bits) = ({int_bits}, {frac_bits}): a = {a.to_numpy()} \n and b= {b.to_numpy()}"

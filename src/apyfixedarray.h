@@ -359,6 +359,15 @@ public:
     //! Create an `APyFixedArray` with a specified diagonal value
     static APyFixedArray diagonal(const nb::tuple& shape, const APyFixed& fill_value);
 
+    //! Create an `APyFixedArray` with all values between start and stop
+    static APyFixedArray fullrange(
+        const nb::object& start,
+        const nb::object& stop,
+        std::optional<int> int_bits = std::nullopt,
+        std::optional<int> frac_bits = std::nullopt,
+        std::optional<int> bits = std::nullopt
+    );
+
 private:
     /* ****************************************************************************** *
      * *                          Private member functions                          * *
@@ -477,6 +486,13 @@ private:
      * `*this`.
      */
     void _set_values_from_ndarray(const nb::ndarray<nb::c_contig>& ndarray);
+
+    /*!
+     * Sets the element at the specified index to the given value.
+     * Assumes the index is within range and the value and array have the same word
+     * lengths.
+     */
+    APY_INLINE void set_value(std::size_t index, const APyFixed& value);
 };
 
 #endif // _APYFIXED_ARRAY_H

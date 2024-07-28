@@ -1,6 +1,7 @@
 #ifndef _ARRAY_UTILS_H
 #define _ARRAY_UTILS_H
 
+#include "apyfixedarray.h"
 #include "apytypes_util.h"
 #include "broadcast.h"
 #include "nanobind/ndarray.h"

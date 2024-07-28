@@ -1132,6 +1132,34 @@ get_conv_lengths(const std::string& mode, const APY_ARRAY& a, const APY_ARRAY& b
     return { len, n_left, n_right };
 }
 
+// Adds a value to a limb vector interpreted as a large number.
+// The function updates the vector in place and handles overflow.
+template <typename RANDOM_ACCESS_ITERATOR, typename ValueType>
+[[maybe_unused]] static APY_INLINE void add_value_to_limbvector(
+    RANDOM_ACCESS_ITERATOR it_begin, RANDOM_ACCESS_ITERATOR it_end, ValueType value
+)
+{
+    using IteratorValueType =
+        typename std::iterator_traits<RANDOM_ACCESS_ITERATOR>::value_type;
+
+    IteratorValueType carry = value;
+    for (auto it = it_begin; it != it_end; ++it) {
+        if (carry == 0) {
+            return;
+        }
+        IteratorValueType new_val = *it + carry;
+        carry = (new_val < *it) ? 1 : 0; // Check for overflow
+        *it = new_val;
+    }
+
+    // If there is still a carry after processing all elements, set all to zero
+    if (carry) {
+        for (auto it = it_begin; it != it_end; ++it) {
+            *it = 0;
+        }
+    }
+}
+
 //! Macro for creating a void-specialization state-less functor `FUNCTOR_NAME` from a
 //! function `FUNC_NAME`. The void-specialization functor allows template argument
 //! deduction to be performed once its function is called. Neat!

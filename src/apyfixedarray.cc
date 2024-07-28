@@ -1837,6 +1837,39 @@ APyFixedArray APyFixedArray::full(const nb::tuple& shape, const APyFixed& fill_v
     return result;
 }
 
+APyFixedArray APyFixedArray::fullrange(
+    const nb::object& start,
+    const nb::object& stop,
+    std::optional<int> int_bits,
+    std::optional<int> frac_bits,
+    std::optional<int> bits
+)
+{
+
+    APyFixed start_fixed = APyFixed::from_number(start, int_bits, frac_bits, bits);
+    APyFixed stop_fixed = APyFixed::from_number(stop, int_bits, frac_bits, bits);
+    if (start_fixed > stop_fixed) {
+        throw nb::value_error("Start value bigger then stop value was given.");
+    }
+    const std::size_t size = (stop_fixed - start_fixed)
+        * static_cast<std::size_t>(std::pow(2, start_fixed.frac_bits()));
+    nanobind::tuple shape = nanobind::make_tuple(size);
+    // If we want to include 'stop' value, use code below
+    // const std::size_t size = (stop_fixed - start_fixed)
+    //     * static_cast<std::size_t>(std::pow(2, start_fixed.frac_bits())) + 1;
+    // std::vector<std::size_t> shape = { static_cast<std::size_t>(size == 1 ? 0 : size)
+    // };
+    // APyFixedArray result(shape, int_bits, frac_bits, bits);
+    APyFixedArray result = APyFixedArray::full(shape, start_fixed);
+    for (std::size_t index = 0; index < result.size(); index++) {
+        // for (std::size_t index = 0; index < 2; index++) {
+        auto it_start = result._data.begin() + (index * result._itemsize);
+        auto it_end = it_start + result._itemsize;
+        ::add_value_to_limbvector(it_start, it_end, index);
+    }
+    return result;
+}
+
 /* ********************************************************************************** *
  * *                            Private member functions                            * *
  * ********************************************************************************** */
@@ -2424,4 +2457,9 @@ APyFixedArray::diagonal(const nb::tuple& shape, const APyFixed& fill_value)
         );
     }
     return result;
+}
+
+APY_INLINE void APyFixedArray::set_value(std::size_t index, const APyFixed& value)
+{
+    std::copy_n(value._data.begin(), _itemsize, _data.begin() + index * _itemsize);
 }

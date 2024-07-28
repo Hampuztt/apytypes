@@ -1215,6 +1215,36 @@ void bind_fixed_array(nb::module_& m)
             An array filled with the specified value.
     )pbdoc"
         )
+        .def_static(
+            "fullrange",
+            &APyFixedArray::fullrange,
+            nb::arg("start"),
+            nb::arg("stop"),
+            nb::arg("int_bits") = nb::none(),
+            nb::arg("frac_bits") = nb::none(),
+            nb::arg("bits") = nb::none(),
+            R"pbdoc(
+        Generates a fixed-point array with values from start to stop.
+
+        Parameters
+        ----------
+        start : int
+            The starting value of the range.
+        stop : int
+            The ending value of the range.
+        int_bits : int, optional
+            Number of integer bits. Default is None.
+        frac_bits : int, optional
+            Number of fractional bits. Default is None.
+        bits : int, optional
+            Total number of bits. Default is None.
+
+        Returns
+        -------
+        APyFixedArray
+            An array of fixed-point numbers from start to stop.
+    )pbdoc"
+        )
 
         /*
          * Dunder methods

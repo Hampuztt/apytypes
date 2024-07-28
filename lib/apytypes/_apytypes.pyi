@@ -1459,6 +1459,36 @@ class APyFixedArray:
             An array filled with the specified value.
         """
 
+    @staticmethod
+    def fullrange(
+        start: object,
+        stop: object,
+        int_bits: int | None = None,
+        frac_bits: int | None = None,
+        bits: int | None = None,
+    ) -> APyFixedArray:
+        """
+        Generates a fixed-point array with values from start to stop.
+
+        Parameters
+        ----------
+        start : int
+            The starting value of the range.
+        stop : int
+            The ending value of the range.
+        int_bits : int, optional
+            Number of integer bits. Default is None.
+        frac_bits : int, optional
+            Number of fractional bits. Default is None.
+        bits : int, optional
+            Total number of bits. Default is None.
+
+        Returns
+        -------
+        APyFixedArray
+            An array of fixed-point numbers from start to stop.
+        """
+
     def __lshift__(self, shift_amnt: int) -> APyFixedArray: ...
     def __matmul__(self, rhs: APyFixedArray) -> APyFixedArray: ...
     def __repr__(self) -> str: ...

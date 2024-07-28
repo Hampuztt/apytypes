@@ -28,6 +28,8 @@
 
    .. automethod:: full
 
+   .. automethod:: fullrange
+
    Change word length
    ------------------
 
